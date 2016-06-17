@@ -5,7 +5,7 @@
 if [[ -n $CRONTAB ]]; then
   args="$@"
   echo "${CRON_OPT//\"/} root \
-	/certbot $args >> /var/log/cron.log 2>&1" > /etc/cron.d/certbot
+	/opt/certbot/venv/bin/certbot $args >> /var/log/cron.log 2>&1" > /etc/cron.d/certbot
     chmod 0644 /etc/cron.d/certbot
     touch /var/log/cron.log
     cron && tail -f /var/log/cron.log;
