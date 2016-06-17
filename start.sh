@@ -1,6 +1,6 @@
 #!/bin/bash
 
-/certbot $args
+/opt/certbot/venv/bin/certbot $args
 
 if [[ -n $CRONTAB ]]; then
   args="$@"
